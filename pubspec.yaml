@@ -1,0 +1,32 @@
+name: negilu_driver_app
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0-210.0.dev
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  lottie: ^3.3.2
+  dotted_border:
+  image_picker: ^1.1.0
+
+  # ✅ Local shared package
+  negilu_shared_package:
+    path: /Users/naveen/Yellow-rock/negilu_flutter_monorepo/negilu_shared_package
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/animations/
