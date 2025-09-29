@@ -16,7 +16,6 @@ dependencies:
   dotted_border:
   image_picker: ^1.1.0
 
-  # ✅ Local shared package
   negilu_shared_package:
     path: /Users/naveen/Yellow-rock/negilu_flutter_monorepo/negilu_shared_package
 
