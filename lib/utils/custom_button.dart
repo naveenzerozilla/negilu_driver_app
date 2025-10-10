@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.backgroundColor = const Color(0xFF8CCB2C), // default green
-    this.textStyle,
+    this.textStyle, required buttonType,
   });
 
   @override

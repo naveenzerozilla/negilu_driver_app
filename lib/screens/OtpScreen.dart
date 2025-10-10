@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:negilu_shared_package/components/applogo.dart';
+import 'package:negilu_shared_package/core/enums.dart';
 
 import '../utils/Appstyle.dart';
 import '../utils/custom_button.dart';
@@ -135,7 +136,7 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
             ),
             const SizedBox(height: 24),
-            CustomButton(
+            CustomButton(   buttonType: ButtonType.filled,
               text: "Continue",
               onPressed: () {
                 String otp = controllers.map((c) => c.text).join();

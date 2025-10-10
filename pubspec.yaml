@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.10.0-210.0.dev
+  sdk: ^3.9.2
 
 dependencies:
   flutter:
@@ -17,7 +17,7 @@ dependencies:
   image_picker: ^1.1.0
 
   negilu_shared_package:
-    path: /Users/naveen/Yellow-rock/negilu_flutter_monorepo/negilu_shared_package
+    path: /Users/naveen/Documents/GitHub/negilu_flutter_monorepo/negilu_shared_package
 
 dev_dependencies:
   flutter_test:

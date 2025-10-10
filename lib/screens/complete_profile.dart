@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:negilu_driver_app/screens/personal_information.dart';
 import 'package:negilu_shared_package/components/applogo.dart';
+import 'package:negilu_shared_package/core/enums.dart';
 import '../utils/Appstyle.dart';
 import '../utils/custom_button.dart';
 class CompleteProfileScreen extends StatelessWidget {
@@ -32,6 +33,7 @@ class CompleteProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             CustomButton(
+              buttonType: ButtonType.filled,
               text: "Complete Registration",
               onPressed: () {
                 Navigator.push(

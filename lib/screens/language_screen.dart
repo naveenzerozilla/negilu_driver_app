@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:negilu_shared_package/components/applogo.dart';
+import 'package:negilu_shared_package/core/enums.dart';
 import '../utils/Appstyle.dart';
 import '../utils/custom_button.dart';
 import 'login_screen.dart';
@@ -87,6 +88,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
             const SizedBox(height: 12),
             CustomButton(
+              buttonType: ButtonType.filled,
               text: "Continue",
               onPressed: () {
                 Navigator.pushReplacement(

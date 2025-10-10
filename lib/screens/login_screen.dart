@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:negilu_driver_app/screens/OtpScreen.dart';
 import 'package:negilu_shared_package/components/applogo.dart';
+import 'package:negilu_shared_package/core/enums.dart';
 import '../utils/Appstyle.dart';
 import '../utils/NavigateHelper.dart';
 import '../utils/customTextfield.dart';
@@ -36,7 +37,7 @@ class LoginScreen extends StatelessWidget {
             ),
 
             const SizedBox(height: 30),
-            CustomButton(
+            CustomButton(   buttonType: ButtonType.filled,
               text: "Continue",
               onPressed: () {
                 NavigationHelper.navigateToReplacement(
