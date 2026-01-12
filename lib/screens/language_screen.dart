@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:negilu_shared_package/components/applogo.dart';
@@ -18,12 +19,12 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
   final List<Map<String, String>> languages = [
     {"label": "English", "value": "en"},
-    {"label": "हिन्दी", "value": "hi"},
+    // {"label": "हिन्दी", "value": "hi"},
     {"label": "ಕನ್ನಡ", "value": "kn"},
-    {"label": "తెలుగు", "value": "te"},
-    {"label": "தமிழ்", "value": "ta"},
-    {"label": "മലയാളം", "value": "ml"},
-    {"label": "मराठी", "value": "mr"},
+    // {"label": "తెలుగు", "value": "te"},
+    // {"label": "தமிழ்", "value": "ta"},
+    // {"label": "മലയാളം", "value": "ml"},
+    // {"label": "मराठी", "value": "mr"},
   ];
 
   @override
@@ -41,19 +42,40 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
             const SizedBox(height: 90),
             const Text('Choose your\nLanguage', style: AppTextStyles.heading),
-            const SizedBox(height: 30),
+            const SizedBox(height: 40),
             Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: DropdownButtonFormField<String>(
+              padding: const EdgeInsets.all(2.0),
+              child: DropdownButtonFormField2<String>(
+                isExpanded: true,
                 value: _selectedLang,
                 decoration: InputDecoration(
                   labelText: "Select Language",
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8), // ✅ Rounded border
+                  ),
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 14,
+                    horizontal: 16,
+                  ),
+                ),
+                iconStyleData: const IconStyleData(
+                  icon: Icon(
+                    Icons.keyboard_arrow_down,
+                    // You can replace this with any icon (e.g., Icons.arrow_drop_down_circle)
+                    color: Colors.black54,
+                  ),
+                  iconSize: 28,
                 ),
                 items: languages.map((lang) {
-                  return DropdownMenuItem(
+                  return DropdownMenuItem<String>(
                     value: lang['value'],
-                    child: Text(lang['label']!, style: TextStyle(fontSize: 18)),
+                    child: Text(
+                      lang['label']!,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   );
                 }).toList(),
                 onChanged: (value) {
@@ -61,6 +83,18 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     _selectedLang = value;
                   });
                 },
+                dropdownStyleData: const DropdownStyleData(
+                  maxHeight: 300,
+                  offset: Offset(0, 6), // adjust dropdown position if needed
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(22),
+                    ), // Change radius here
+                  ),
+                ),
+                menuItemStyleData: const MenuItemStyleData(
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                ),
               ),
             ),
             const Spacer(),
@@ -72,14 +106,9 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 );
               },
               style: OutlinedButton.styleFrom(
-                side: const BorderSide(
-                  color: Colors.lightGreen,
-                  width: 1, // 👈 reduce thickness (default is 1.0)
-                ),
+                side: const BorderSide(color: Colors.lightGreen, width: 1),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    6,
-                  ), // 👈 reduce corner radius
+                  borderRadius: BorderRadius.circular(6),
                 ),
                 minimumSize: const Size.fromHeight(48),
               ),

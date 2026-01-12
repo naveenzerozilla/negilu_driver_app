@@ -15,6 +15,23 @@ dependencies:
   lottie: ^3.3.2
   dotted_border:
   image_picker: ^1.1.0
+  provider:
+  shared_preferences: ^2.5.3
+  mime: ^2.0.0
+  http_parser: ^4.1.2
+  cached_network_image:
+  dropdown_button2: ^2.3.9
+  flutter_svg: ^2.0.10+1
+  flutter_riverpod: ^3.0.3
+  razorpay_flutter:
+  fluttertoast: ^8.2.4
+  image_cropper: ^11.0.0
+  url_launcher: ^6.2.6
+  dio: ^5.9.0
+  intl: ^0.19.0
+
+
+
 
   negilu_shared_package:
     path: /Users/naveen/Documents/GitHub/negilu_flutter_monorepo/negilu_shared_package

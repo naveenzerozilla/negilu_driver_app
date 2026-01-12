@@ -7,7 +7,7 @@ class AppTextStyles {
     color: Colors.black,
   );
   static const heading1 = TextStyle(
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: FontWeight.w700,
     color: Colors.black,
   );

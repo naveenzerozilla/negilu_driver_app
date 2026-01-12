@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:negilu_driver_app/screens/Profile/Dashboard_screen.dart';
 import 'package:negilu_shared_package/components/applogo.dart';
 import 'package:negilu_shared_package/components/custom_card.dart';
 import 'package:negilu_shared_package/components/custom_text.dart';
@@ -9,6 +10,7 @@ import 'package:negilu_shared_package/core/enums.dart';
 import '../utils/Appstyle.dart';
 import '../utils/custom.dart';
 import '../utils/custom_button.dart';
+import 'bottom_appbar.dart';
 import 'complete_profile.dart';
 
 class RegistrationCompleteScreen extends StatefulWidget {
@@ -39,15 +41,23 @@ class _RegistrationCompleteScreenState
                 color: const Color(0xFF8CCB2C),
               ),
             ),
-            Center(child: TextWidget(text: 'Registration completed!')),
+            Center(
+              child: Text(
+                'Registration completed!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+            ),
+            SizedBox(height: 8),
             Center(
               child: const Text(
                 'Your KYC details have been submitted successfully. We’ll review your information and update you soon.',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black54,
-                  height: 1.5,
-                ),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, color: Colors.black),
               ),
             ),
             const SizedBox(height: 30),
@@ -71,7 +81,7 @@ class _RegistrationCompleteScreenState
             text: "Go to Home",
             buttonType: ButtonType.filled,
             onPressed: () {
-              goOff(context, CompleteProfileScreen());
+              goOff(context, DashboardLayout());
             },
             textStyle: AppTextStyles.buttonStyle,
           ),
@@ -94,7 +104,12 @@ class ProfilePhotoTipsCard1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey.shade300, width: 1),
+      ),
       margin: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -103,21 +118,25 @@ class ProfilePhotoTipsCard1 extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.info_outline, color: Colors.orangeAccent),
+                Icon(Icons.info, color: Colors.orangeAccent),
                 SizedBox(width: 5),
-                Text(
-                  "Under Review",
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Under Review",
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Container(child: Text("Usually Takes 1-2 business days")),
+                  ],
                 ),
               ],
             ),
-            Container(
-              padding: EdgeInsets.only(left: 30),
-              child: Text("Usually Takes 1-2 business days"),
-            ),
+
             Divider(),
             SizedBox(height: 5),
             Text(

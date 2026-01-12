@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'Appstyle.dart';
 
@@ -21,11 +22,19 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      // maxLength: hintText == 'Enter mobile number' ? 10 : null,
+      inputFormatters: hintText == 'Enter mobile number'
+          ? [
+              FilteringTextInputFormatter.digitsOnly,
+              LengthLimitingTextInputFormatter(10),
+            ]
+          : [],
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,
+
         hintStyle: const TextStyle(color: Colors.black54),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
@@ -65,7 +74,6 @@ class HeadingText extends StatelessWidget {
       text,
       style: AppTextStyles.heading1, // reuse your existing style
       textAlign: textAlign,
-
     );
   }
 }

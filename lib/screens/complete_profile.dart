@@ -38,7 +38,9 @@ class CompleteProfileScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (_) => const PersonalInfoScreen()),
+                  MaterialPageRoute(builder: (_) =>  PersonalInfoScreen(
+                      initialStep: 3
+                  )),
                 );
               },
               textStyle: AppTextStyles.buttonStyle, // your existing style
