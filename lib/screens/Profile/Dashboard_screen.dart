@@ -29,8 +29,8 @@ class DashboardScreen extends ConsumerStatefulWidget {
 
 class _DashboardScreenState extends ConsumerState<DashboardScreen> {
   late Razorpay _razorpay;
-  double latitude = 12.9250;
-  double longitude = 77.5938;
+  double latitude = 12.94;
+  double longitude = 77.62;
   bool isSwitchLoading = false;
 
   @override
